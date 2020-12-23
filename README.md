@@ -1,3 +1,3 @@
-# algorithms
-### MAIN GIRLS REPOSITORY 💙 ###
-repositório criado para ajudar no entendimento de algoritmos básicos e programação competitiva.
+# My solutions to cp3 problems
+
+repository created to help understand basic algorithms used in competitive programming.

@@ -1,40 +1,54 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <string>
+#include <vector>
+
 using namespace std;
 
 int main()
 {
-    int t, n;
-    string v[105];
-    cin >> t;
-    for (int t = 0; t < t; t++)
-    {
-        cin >> n;
-        string s, r;
-        int num, pos = 0;
-        for (int i = 1; i <= n; i++)
+
+    int n, valor, qte;
+
+    string s, t;
+
+    vector<string> v;
+
+    cin >> n;
+
+    
+    while(true){
+        map<string, int> mapa;
+
+        v.clear();
+
+        for (int i = 0; i < n; i++)
         {
             cin >> s;
-            if (s == "LEFT")
+            v.push_back(s);
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> s >> valor >> qte;
+
+            if (qte != 0)
+                mapa[s] -= qte * (valor / qte);
+
+            for (int j = 0; j < qte; j++)
             {
-                v[i] = s;
-                pos--;
-            }
-            else if (s == "RIGHT")
-            {
-                v[i] = s;
-                pos++;
-            }
-            else
-            {
-                cin >> r >> num;
-                v[i] = v[num];
-                if (v[num] == "LEFT")
-                    pos--;
-                else if (v[num] == "RIGHT")
-                    pos++;
+                cin >> t;
+                mapa[t] += valor / qte;
             }
         }
-        cout << pos << endl;
+
+        for (int i = 0; i < n; i++)
+            cout << v[i] << " " << mapa[v[i]] << endl;
+
+        if (cin >> n)
+            cout << endl;
+        else
+            break;
     }
-    return 0;
+    
 }

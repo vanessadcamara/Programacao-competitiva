@@ -1,54 +1,28 @@
-#include <iostream>
-#include <map>
-#include <string>
-#include <vector>
-
+#include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-
-    int n, valor, qte;
-
-    string s, t;
-
-    vector<string> v;
-
-    cin >> n;
-
-    
-    while(true){
-        map<string, int> mapa;
-
-        v.clear();
-
-        for (int i = 0; i < n; i++)
-        {
-            cin >> s;
-            v.push_back(s);
+int main(){
+    double h, u, d, f;
+    while(cin >> h >> u >> d >> f){
+        if(h == 0) break;
+        int cont = 1;
+        double height = 0;
+        double fat = (u*f)/100.0;
+        while(true){
+            if(u > 0) height+=u;
+            if(height > h) break;
+            height = height - d;
+            u = u-fat;
+            if(height < 0) break;
+            cont++;
         }
-
-        for (int i = 0; i < n; i++)
-        {
-            cin >> s >> valor >> qte;
-
-            if (qte != 0)
-                mapa[s] -= qte * (valor / qte);
-
-            for (int j = 0; j < qte; j++)
-            {
-                cin >> t;
-                mapa[t] += valor / qte;
-            }
+        if(height >= 0){
+            cout << "success on day " << cont << endl;
         }
-
-        for (int i = 0; i < n; i++)
-            cout << v[i] << " " << mapa[v[i]] << endl;
-
-        if (cin >> n)
-            cout << endl;
-        else
-            break;
+        else{
+            cout << "failure on day " << cont << endl;
+        }
+        
     }
-    
-}
+    return 0;
+}   

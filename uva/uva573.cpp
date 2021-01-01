@@ -2,21 +2,13 @@
 using namespace std;
 
 int main(){
-    double h, u, d; 
-    double f;
-    while(cin >> h >> u >> d >> f){
-        if(h == 0) break;
-        
-        //h é altura do poço
-        //u é a distancia subida inicialmente
-        //d distancia da decida
-        //f é o fator de encolhimento da distancia de subida  
+    double h, u, d, f;
+    while(cin >> h >> u >> d >> f && h != 0){
         double altura_atual = 0;
-        double k = (u*f)/100.0;
         int i = 1;
+        double k = (u*f)/100.0;
         while(true){
             if(u > 0) altura_atual += u;
-            // cout << altura_atual << endl;
             if(altura_atual > h){
                 cout << "success on day " << i << endl;
                 break;
@@ -26,8 +18,7 @@ int main(){
                 cout << "failure on day " << i << endl;
                 break;
             }
-            
-            u = u-(k); // 2.7
+            u = u-k;
             i++;
         }
     }

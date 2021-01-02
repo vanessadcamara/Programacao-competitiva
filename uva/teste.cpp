@@ -1,14 +1,17 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    string s;
-    cin >> s;
-    int a = 0;
-    for(int i = 0; i < s.size(); i++){
-        a = s[i]-96;
-        cout << "valor da letra: " << a << endl;
+int main()
+{
+    int n;
+    cin >> n;
+    while (n--)
+    {
+        string s;
+        getline(cin, s);
+        cout << s << endl;
     }
 
     return 0;
 }
+a

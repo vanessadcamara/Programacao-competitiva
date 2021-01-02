@@ -9,15 +9,17 @@ int main()
         getline(cin, t);
         int a = 0, b = 0;
         for (int i = 0; i < s.size(); i++)
-        {
-            if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
-                a += (tolower(s[i]) - 96);
+        {   s[i] = tolower(s[i]);
+            if (s[i] >= 'a' && s[i] <= 'z')
+                a += (s[i]- 'a')+1;
         }
         for (int i = 0; i < t.size(); i++)
         {
-            if ((t[i] >= 'a' && t[i] <= 'z') || (t[i] >= 'A' && t[i] <= 'Z'))
-                b += (tolower(t[i]) - 96);
+            t[i] = tolower(t[i]);
+            if (t[i] >= 'a' && t[i] <= 'z')
+                b += (t[i] - 'a') + 1;
         }
+
         int suma = 0, sumb = 0;
         while (a > 0 || suma > 9)
         {
@@ -44,8 +46,8 @@ int main()
             swap(suma, sumb);
         }
         //a
-        double rat = (suma * 1.0) / (sumb * 1.0);
-        printf("%.2f %\n", rat * 100.0);
+        double rat = (double)suma / (double)sumb;
+        printf("%.2f %\n", rat*100);
     }
 
     return 0;

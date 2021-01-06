@@ -16,10 +16,10 @@ int main(){
             if(str[i+1] == 'S'){
                 v[0].push_back(str[i]);
             }
-            if(str[i+1] == 'D'){
+            if(str[i+1] == 'H'){
                 v[1].push_back(str[i]);
             }
-            if(str[i+1] == 'H'){
+            if(str[i+1] == 'D'){
                 v[2].push_back(str[i]);
             }
             if(str[i+1] == 'C'){
@@ -73,11 +73,11 @@ int main(){
                 continue;
             }
             if(most == v[1].size()){ 
-                cout << 'D' << endl;
+                cout << 'H' << endl;
                 continue;
             }
             if(most == v[2].size()){ 
-                cout << 'H' << endl;
+                cout << 'D' << endl;
                 continue;
             }
             if(most == v[3].size()){ 

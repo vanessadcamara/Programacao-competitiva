@@ -55,9 +55,9 @@ void knight(int a, int b){
 
 void pawn(int a, int b){
     if(m[a][b] == 'P'){
-        int ai[] = {-1, -1, -1};
-        int aj[] = {-1, 0, 1};
-        for(int k = 0; k < 3; k++){
+        int ai[] = {-1,-1};
+        int aj[] = {-1, 1};
+        for(int k = 0; k < 2; k++){
             int i = a, j = b;
             if(onboard(i+ai[k], j+aj[k])){
                 m[i+ai[k]][j+aj[k]] = (m[i+ai[k]][j+aj[k]]-'0'<=1 && m[i+ai[k]][j+aj[k]] >= 0)? '1' : m[i+ai[k]][j+aj[k]]; //ele pode ir para frente pelo menos uma vez
@@ -65,9 +65,9 @@ void pawn(int a, int b){
         }
     }
     else if(m[a][b] == 'p'){
-        int ai[] = {1, 1, 1};
-        int aj[] = {-1, 0, 1};
-        for(int k = 0; k < 3; k++){
+        int ai[] = {1, 1};
+        int aj[] = {-1, 1};
+        for(int k = 0; k < 2; k++){
             int i = a, j = b;
             if(onboard(i+ai[k], j+aj[k])){
                 m[i+ai[k]][j+aj[k]] = (m[i+ai[k]][j+aj[k]]-'0'<=1 && m[i+ai[k]][j+aj[k]] >= 0)? '1' : m[i+ai[k]][j+aj[k]]; //ele pode ir para frente pelo menos uma vez
@@ -116,11 +116,6 @@ int main(){
                 j++;
             }
         }
-        // for(int i = 0; i < 8; i++){
-        //     for(int j = 0; j < 8; j++){
-        //         cout << m[i][j] << " ";
-        //     }cout << endl;
-        // }
         for(int l = 0; l < 8; l++){
             for(int r = 0; r < 8; r++){
                 if(m[l][r] == '0') continue;
@@ -132,11 +127,7 @@ int main(){
                 if(m[l][r] == 'k'|| m[l][r] == 'K') king(l,r);
             }
         }
-        // for(int i = 0; i < 8; i++){
-        //     for(int j = 0; j < 8; j++){
-        //         cout << m[i][j] << " ";
-        //     }cout << endl;
-        // }
+
         int ans = 0;
         for(int i = 0; i < 8; i++){
             for(int j = 0; j < 8; j++){

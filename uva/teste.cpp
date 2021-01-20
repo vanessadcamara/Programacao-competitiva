@@ -1,1 +1,11 @@
-1 0 1 / 2 2 X 3 3 X 1 / 3 / X 1 2 1 0 1 / 2 2 X 3 3 X 1 / 3 / 1 / X 8 0 1 0 1 / 2 2 X 3 3 X 1 / 3 / 1 / 8 / 9
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string r;
+    int n;
+    cin >> r;
+    n = (int) r;
+    cout << r<< endl;
+    return 0;
+}

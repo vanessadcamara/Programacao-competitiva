@@ -2,6 +2,13 @@
 using namespace std;
 
 int main(){
-    cout << 786+687 << endl;
+    int n;
+    cin >> n;
+    cin.ignore();
+    while(n--){
+        string s;
+        getline(cin, s);
+        cout << s << endl;
+    }
     return 0;
 }

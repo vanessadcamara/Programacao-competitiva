@@ -1,4 +1,3 @@
-# My solutions to cp3 problems
+# Sobre
 
-repository created to share my solutions to cp3 problems and help other students to understand algorithms used in competitive programming.
-
+Minhas soluções para problemas de programação competitiva do Uri :)

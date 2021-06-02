@@ -27,17 +27,22 @@ int main(){
             break;
         }
     }
-    if(f){
+    if(f == 0){
         cout << "IMPOSSIBLE" << endl;
         return 0;
     }
-    for(int k = 0; k < n; k++){
-        if(b[k] == a[i]){
-            cout << k << " ";
+    int aux1 = 0, aux2 = 0;
+    for(int l = 0; l < n; l++){
+        if(b[l] == a[i]){
+            aux1 = l;
+            break;
         }
-        if(b[k] == a[j]){
-            cout << k << " ";
+    }
+    for(int l = 0; l < n; l++){
+        if(b[l] == a[j] && j != i){
+            aux2 = l;
         }
-    }cout << endl;
+    }
+    cout << aux1+1 << " " << aux2+1 << endl;
     
 }

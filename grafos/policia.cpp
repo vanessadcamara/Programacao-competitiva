@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 // se existir um caminho de 0,0 até 4,4 -> COPS
-// se não -> ROBERS
+// se não -> ROBBERS
 int n, m;
 int matriz[5][5];
 int visitado[5][5];
 
+//dentro da matriz
 int dentro(int i, int j){
     return (i >= 0 && i < n && j >= 0 && j < m);
 }
@@ -15,6 +16,7 @@ int b[] = {1,-1,0,0};
 void dfs(int i, int j){
     visitado[i][j] = 1;
     for(int k = 0; k < 4; k++){
+        // visito cada posição
         if(dentro(i+a[k], j+b[k]) && !visitado[i+a[k]][j+b[k]] && matriz[i+a[k]][j+b[k]] == 0){
             dfs(i+a[k],j+b[k]);
         }
@@ -32,7 +34,7 @@ int main(){
                 visitado[i][j] = 0;
             }
         }
-        if(matriz[0][0] == 0) dfs(0,0);
+        if(matriz[0][0] == 0) dfs(0,0); // flood fill
         
         if(visitado[0][0] && visitado[4][4]) cout << "COPS\n";
         else cout << "ROBBERS\n";
